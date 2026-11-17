@@ -378,13 +378,14 @@ function Index() {
               {SITE.address.full}
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href="/contact#inquiry"
+              <Link
+                to="/contact"
+                hash="inquiry"
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-glow"
               >
                 <MapPin className="h-4 w-4" />
                 Send an Inquiry
-              </a>
+              </Link>
               <a
                 href={SITE.facebook}
                 target="_blank"

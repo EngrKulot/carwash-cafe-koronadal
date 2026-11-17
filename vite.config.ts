@@ -7,13 +7,25 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@leadconnector/vite-tanstack-config";
 
+const basePath = process.env.VITE_BASE_PATH ?? "/";
+
 export default defineConfig({
   // Browser errors stay in the trusted parent-frame console-log flow;
   // do not expose the bridge collector on the public sandbox tunnel.
   devServerBridge: { errorCollector: false },
   // Do not set server.hmr.timeout — Vite 8 deprecated those websocket fields
   // (use server.ws.*). Overlay/host/port are package-owned; default WS timeout is 30s.
+  vite: {
+    base: basePath,
+  },
   tanstackStart: {
+    // Generate static HTML for every file-based route so GitHub Pages can host
+    // the site without a long-running TanStack Start server.
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+      failOnError: true,
+    },
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },

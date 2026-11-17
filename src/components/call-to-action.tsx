@@ -1,4 +1,5 @@
 import { Droplet, MessageCircle } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 
@@ -31,13 +32,14 @@ export function CallToAction({ title, subtitle }: CtaProps) {
           {subtitle}
         </p>
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="/contact#inquiry"
+          <Link
+            to="/contact"
+            hash="inquiry"
             className="inline-flex items-center gap-2 rounded-md bg-primary-foreground px-6 py-3.5 text-sm font-bold text-primary shadow-lg transition-all hover:-translate-y-px active:translate-y-px"
           >
             Send an Inquiry
             <span aria-hidden>→</span>
-          </a>
+          </Link>
           <a
             href={SITE.facebook}
             target="_blank"
