@@ -24,7 +24,7 @@ type HeroProps = {
    * "soft" for portrait/team photography where faces should stay visible,
    * "medium" for readability on busy photography while keeping colors.
    */
-  overlay?: "strong" | "soft" | "medium";
+  overlay?: "strong" | "soft" | "medium" | "cinematic";
 };
 
 export function Hero({
@@ -67,6 +67,12 @@ export function Hero({
           <>
             <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-surface/35" />
             <div className="absolute inset-0 bg-gradient-to-r from-surface/90 via-surface/55 to-surface/15" />
+          </>
+        ) : overlay === "cinematic" ? (
+          <>
+            {/* Cinematic: darker bottom for depth, dark left for text, lighter center/right so the storefront and signage stay visible */}
+            <div className="absolute inset-0 bg-gradient-to-t from-surface/85 via-surface/35 to-surface/12" />
+            <div className="absolute inset-0 bg-gradient-to-r from-surface/85 via-surface/35 to-transparent" />
           </>
         ) : (
           <>

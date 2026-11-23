@@ -38,7 +38,7 @@ const GALLERY_ITEMS: { src: string; alt: string; span?: string }[] = [
   {
     src: IMAGES.facilityWide,
     alt: "Carwash Cafe Koronadal multi-bay facility with vehicles being serviced",
-    span: "sm:col-span-2 lg:col-span-2 lg:row-span-2",
+    span: "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 lg:col-span-2 lg:row-span-2",
   },
   {
     src: IMAGES.cafeBrandedIcedFrappe,
@@ -59,7 +59,7 @@ const GALLERY_ITEMS: { src: string; alt: string; span?: string }[] = [
   {
     src: IMAGES.cafeLoungeInteriorMural,
     alt: "Carwash Cafe air-conditioned dining lounge with tropical mural",
-    span: "lg:col-span-2 lg:row-span-2",
+    span: "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 lg:col-span-2 lg:row-span-2",
   },
   {
     src: IMAGES.engineBayCleanToyotaBlack,
@@ -70,12 +70,12 @@ const GALLERY_ITEMS: { src: string; alt: string; span?: string }[] = [
     alt: "Commercial truck receiving complete foam wash",
   },
   {
-    src: IMAGES.icedCoffeeFrappe,
-    alt: "Iced coffee frappe with whipped cream served at the café",
+    src: IMAGES.raptorWashRinse,
+    alt: "Carwash Cafe detailer hand rinsing white Ford Raptor pickup truck in wash bay",
   },
   {
-    src: IMAGES.cafeFood,
-    alt: "Fresh Filipino rice meal and snacks served at the café",
+    src: IMAGES.underwashRedIsuzuRamp,
+    alt: "Glossy red pickup elevated on the outdoor underwash ramp under green canopy",
   },
 ];
 

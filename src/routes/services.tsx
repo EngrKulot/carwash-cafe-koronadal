@@ -185,8 +185,8 @@ function ServicesPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {CAFE_SERVICES.map((c, i) => (
               <Reveal key={c.id} delay={i * 90}>
-                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-[0_22px_50px_-28px_rgba(0,0,0,0.45)]">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[0_12px_36px_-24px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_22px_50px_-24px_rgba(0,0,0,0.28)]">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
                     <img
                       src={c.image}
                       alt={c.alt}
@@ -195,12 +195,16 @@ function ServicesPage() {
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-display text-lg font-semibold text-foreground">
-                      {c.title}
-                    </h3>
-                    <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-                      {c.blurb}
-                    </p>
+                    <div className="flex items-center gap-2.5">
+                      <span
+                        className="inline-block h-4 w-[3px] shrink-0 rounded-full bg-primary"
+                        aria-hidden
+                      />
+                      <h3 className="font-display text-lg font-bold tracking-tight text-foreground">
+                        {c.title}
+                      </h3>
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.blurb}</p>
                   </div>
                 </div>
               </Reveal>

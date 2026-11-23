@@ -23,10 +23,7 @@ export const SITE = {
     line2: "Koronadal City, 9506 South Cotabato, Philippines",
     full: "Purok Saint Gabriel, Judge Alba St., Zone III, Koronadal City, 9506 South Cotabato, Philippines",
   },
-  hours: [
-    { day: "Monday to Saturday", time: "7:30 AM to 8:00 PM" },
-    { day: "Sunday", time: "Closed / By Appointment" },
-  ],
+  hours: [{ day: "Open Daily", time: "7:00 AM to 5:00 PM" }],
   mapEmbed:
     "https://www.google.com/maps?q=" +
     encodeURIComponent(
@@ -74,18 +71,22 @@ export const IMAGES = {
     "https://vibe.filesafe.space/1794817991761046358/attachments/34493fac-32bf-4538-838a-516c360adda0.png",
   engineBayRestoredToyotaRed:
     "https://vibe.filesafe.space/1794817991761046358/attachments/d5c2c3a1-2859-41eb-9ea0-886f66c04e92.png",
+  raptorWashRinse:
+    "https://vibe.filesafe.space/1794817991761046358/attachments/4f0d1d28-aa83-4bb4-bacd-77ef606b8320.png",
+  underwashRedIsuzuRamp:
+    "https://vibe.filesafe.space/1794817991761046358/attachments/de3751c8-84d5-44df-adce-062d53463d27.png",
 
-  // AI-generated café imagery (supplementary and illustrative, not photos of the actual establishment)
+  // Illustrative café lifestyle imagery
   cafeInterior:
     "https://vibe.filesafe.space/1794817991761046358/assets/8700d479-4f45-40e6-a7c4-d7cb4c4fd581.png",
-  icedCoffeeFrappe:
-    "https://vibe.filesafe.space/1794817991761046358/assets/19f7fc13-ad42-4e10-b04e-300aee278573.png",
-  cafeFood:
-    "https://vibe.filesafe.space/1794817991761046358/assets/132b4154-cbb0-4879-9188-29d46ea73a4e.png",
   customerLounge:
     "https://vibe.filesafe.space/1794817991761046358/assets/5e117933-6cd5-4e58-98ca-c6e7e77a0dc1.png",
   cafeLifestyle:
     "https://vibe.filesafe.space/1794817991761046358/assets/a70333aa-c4d8-4c19-8956-801e03be53f8.png",
+  wifiTableSign:
+    "https://vibe.filesafe.space/1794817991761046358/attachments/1fe1bd48-bebb-4e44-8c11-d75f1b46e5dc.png",
+  restroomWallSign:
+    "https://vibe.filesafe.space/1794817991761046358/attachments/9235ca27-92dd-4a7c-9cf1-dcbbdae45bb9.png",
 
   // Page heroes & supplementary photography
   teamPhoto:
@@ -99,19 +100,19 @@ export const IMAGES = {
   galleryHero:
     "https://vibe.filesafe.space/1794817991761046358/attachments/1c58e427-3889-4ed0-b4d0-8ee037caa76c.png",
   contactHero:
-    "https://vibe.filesafe.space/1794817991761046358/assets/c6f71873-49a2-4485-8096-a3e9cbef242e.png",
+    "https://vibe.filesafe.space/1794817991761046358/attachments/45bae882-8303-4239-9b2f-3857f0423add.png",
   streetEntrance:
-    "https://vibe.filesafe.space/1794817991761046358/assets/c6f71873-49a2-4485-8096-a3e9cbef242e.png",
+    "https://vibe.filesafe.space/1794817991761046358/attachments/45bae882-8303-4239-9b2f-3857f0423add.png",
   extEntrance:
-    "https://vibe.filesafe.space/1794817991761046358/assets/a2719f7a-e186-45f7-92ad-47aafdfd2bb8.png",
+    "https://vibe.filesafe.space/1794817991761046358/attachments/45bae882-8303-4239-9b2f-3857f0423add.png",
   foamCannon:
     "https://vibe.filesafe.space/1794817991761046358/assets/4dea2d90-f733-431f-9bda-d4207dd49176.png",
   cafeLounge:
     "https://vibe.filesafe.space/1794817991761046358/attachments/5a74f464-1009-4f99-8b33-4099dc7440af.png",
   polisher:
-    "https://vibe.filesafe.space/1794817991761046358/assets/8c6585ec-2a6a-42f5-b0c6-eaf1eb68a4b2.png",
+    "https://vibe.filesafe.space/1794817991761046358/attachments/b4131b86-d115-4160-91b7-902bb169e0d8.png",
   windowTint:
-    "https://vibe.filesafe.space/1794817991761046358/assets/1f76c7b4-aa65-4c32-ae9e-668e43d44faf.png",
+    "https://vibe.filesafe.space/1794817991761046358/attachments/7bfa8b30-223a-416c-8e66-dc65a5dc47e1.png",
   underwash:
     "https://vibe.filesafe.space/1794817991761046358/assets/05d35034-07e0-4343-86ec-4b89cf4255f1.png",
   interiorDetail:
@@ -169,7 +170,7 @@ export const AUTO_SERVICES: ServiceItem[] = [
       "Multi-step buffing for scratch removal",
     ],
     image: IMAGES.polisher,
-    alt: "Detailer machine-polishing the fender of a dark car",
+    alt: "Carwash Cafe detailer buffing and polishing the roof of a black SUV in bay 6",
   },
   {
     id: "window-tinting",
@@ -182,7 +183,7 @@ export const AUTO_SERVICES: ServiceItem[] = [
       "93% infrared rejection (per product spec)",
     ],
     image: IMAGES.windowTint,
-    alt: "Installer applying dark window tint film to a car side window",
+    alt: "White Toyota Hilux pickup with installed dark window tint at Carwash Cafe Koronadal",
   },
 ] as const;
 
@@ -211,8 +212,8 @@ export const CAFE_SERVICES: ServiceItem[] = [
     blurb:
       "Stay connected and productive while your vehicle is being detailed. Complimentary Wi-Fi for every guest.",
     points: ["Complimentary Wi-Fi", "Work or stream while you wait", "Fast, reliable connection"],
-    image: IMAGES.customerLounge,
-    alt: "Comfortable air-conditioned customer lounge with relaxed seating",
+    image: IMAGES.wifiTableSign,
+    alt: "Transparent acrylic Free Wi-Fi tabletop sign on wooden cafe table at Carwash Cafe Koronadal",
   },
   {
     id: "restrooms",
@@ -220,11 +221,16 @@ export const CAFE_SERVICES: ServiceItem[] = [
     blurb:
       "Clean, convenient restroom facilities available on-site for all customers during their visit.",
     points: ["On-site restrooms", "Clean & maintained", "Customer convenience"],
-    image: IMAGES.cafeInterior,
-    alt: "Clean modern café interior with comfortable customer seating",
+    image: IMAGES.restroomWallSign,
+    alt: "Modern black restroom wall sign with male and female symbols and red accent",
   },
 ] as const;
 
+// Only authentic Carwash Cafe Koronadal photography is shown here.
+// AI-generated / stock supplementary images (the /assets/ lifestyle and
+// studio shots) have been removed so the gallery reflects the real business.
+// Spans are tuned so the "All" view tiles into complete rows on mobile (2 col),
+// tablet (3 col) and desktop (4 col) with no orphaned final tile.
 export const GALLERY: { src: string; alt: string; span?: string; tag?: string }[] = [
   {
     src: IMAGES.facilityWide,
@@ -239,28 +245,16 @@ export const GALLERY: { src: string; alt: string; span?: string; tag?: string }[
     tag: "Underwash Ramp",
   },
   {
-    src: IMAGES.customerLounge,
-    alt: "Relaxed customer waiting lounge with sofa and natural light for guests to unwind",
-    span: "lg:row-span-2",
-    tag: "Café Lounge",
-  },
-  {
     src: IMAGES.cafeLoungeInteriorMural,
     alt: "Authentic Carwash Cafe Koronadal air-conditioned dine-in lounge with tropical leaf mural, Carwash Cafe wall logo, and potted plant tables",
-    span: "lg:col-span-2",
+    span: "lg:row-span-2",
     tag: "Café Lounge",
   },
   {
     src: IMAGES.engineBayRestoredToyotaRed,
     alt: "Spotless detailed Toyota engine bay with vibrant red chassis and dressed engine cover at Carwash Cafe",
-    span: "lg:col-span-2",
+    span: "sm:col-span-2 lg:col-span-2",
     tag: "Engine Detail",
-  },
-  {
-    src: IMAGES.cafeLifestyle,
-    alt: "Two guests enjoying coffee and conversation in a bright café while waiting for their vehicle",
-    span: "lg:col-span-2",
-    tag: "Café Lounge",
   },
   {
     src: IMAGES.washBaysActive,
@@ -269,34 +263,8 @@ export const GALLERY: { src: string; alt: string; span?: string; tag?: string }[
     tag: "Facility",
   },
   {
-    src: IMAGES.foamCannon,
-    alt: "Thick foam cannon suds coating a vehicle during an active exterior wash",
-    span: "lg:col-span-2",
-    tag: "Foam Wash",
-  },
-  {
-    src: IMAGES.cafeInterior,
-    alt: "Comfortable modern café dining area with warm ambient lighting and contemporary seating",
-    tag: "Café Lounge",
-  },
-  {
     src: IMAGES.cafeBrandedIcedFrappe,
     alt: "Official Carwash Cafe Koronadal branded iced frappe drink with whipped cream and chocolate drizzle",
-    tag: "Café",
-  },
-  {
-    src: IMAGES.icedCoffeeFrappe,
-    alt: "Iced coffee frappe with whipped cream and a tall iced latte on a café table",
-    tag: "Café",
-  },
-  {
-    src: IMAGES.cafeFood,
-    alt: "Filipino silog-style rice meal, pandesal, and fresh fruit served fresh at the café",
-    tag: "Café",
-  },
-  {
-    src: IMAGES.latte,
-    alt: "Freshly prepared iced latte with foam art served on a café table",
     tag: "Café",
   },
   {
@@ -317,6 +285,7 @@ export const GALLERY: { src: string; alt: string; span?: string; tag?: string }[
   {
     src: IMAGES.foamWashCommercialTruck,
     alt: "Commercial delivery truck coated in thick active snow foam during full exterior wash service",
+    span: "sm:col-span-2 lg:col-span-2",
     tag: "Foam Wash",
   },
   {
@@ -330,18 +299,15 @@ export const GALLERY: { src: string; alt: string; span?: string; tag?: string }[
     tag: "Underwash Ramp",
   },
   {
-    src: IMAGES.washBay,
-    alt: "Covered vehicle wash bay with foam and rinse stations ready for service",
-    tag: "Facility",
-  },
-  {
     src: IMAGES.polisher,
-    alt: "Detailer machine-polishing a car fender with MTX professional compound",
+    alt: "Carwash Cafe detailer buffing and polishing the roof of a black SUV in bay 6",
+    span: "lg:col-span-2",
     tag: "Restoration",
   },
   {
     src: IMAGES.windowTint,
-    alt: "Applying dark Magic Tint automotive window film",
+    alt: "White Toyota Hilux pickup with installed dark window tint at Carwash Cafe Koronadal",
+    span: "lg:col-span-2",
     tag: "Restoration",
   },
 ] as const;

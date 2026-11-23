@@ -23,9 +23,9 @@ export const Route = createFileRoute("/contact")({
         content: "Find us in Koronadal City: inquiry form, Facebook, address, map, and hours.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: IMAGES.extEntrance },
+      { property: "og:image", content: IMAGES.contactHero },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: IMAGES.extEntrance },
+      { name: "twitter:image", content: IMAGES.contactHero },
     ],
   }),
   component: ContactPage,
@@ -53,12 +53,13 @@ const CONTACT_INFO = [
 function ContactPage() {
   return (
     <>
-      {/* Hero: preserved exactly as approved */}
+      {/* Hero with authentic exterior storefront and roadside signage */}
       <Hero
         full
-        image={IMAGES.extEntrance}
-        imageAlt="Exterior entrance of Carwash Cafe Koronadal in the early evening"
-        imageClassName="object-cover object-[center_60%]"
+        overlay="cinematic"
+        image={IMAGES.contactHero}
+        imageAlt="Carwash Cafe Koronadal storefront, wash facility, and roadside signage along Judge Alba Street"
+        imageClassName="object-cover object-[center_45%] lg:object-[center_50%]"
         eyebrow="Contact & Location"
         title={
           <>
@@ -70,8 +71,7 @@ function ContactPage() {
         secondary={{ label: "Message Us on Facebook", to: SITE.facebook }}
         badges={[
           { label: "Koronadal City, South Cotabato" },
-          { label: "Mon to Sat: 7:30 AM to 8:00 PM" },
-          { label: "Sun: Closed / By Appointment" },
+          { label: "Open Daily: 7:00 AM to 5:00 PM" },
         ]}
       />
 
@@ -220,10 +220,6 @@ function ContactPage() {
                       <strong className="text-foreground">morning reservation</strong> via Facebook,
                       as the process takes longer.
                     </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    <span>Sundays are closed or by appointment only.</span>
                   </li>
                 </ul>
                 <a
