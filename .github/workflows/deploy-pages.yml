@@ -34,6 +34,7 @@ jobs:
         run: npm run build
         env:
           VITE_BASE_PATH: /carwash-cafe-koronadal/
+          VITE_MAKE_WEBHOOK_URL: ${{ secrets.VITE_MAKE_WEBHOOK_URL }}
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
