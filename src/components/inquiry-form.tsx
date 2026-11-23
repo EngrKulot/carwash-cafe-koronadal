@@ -116,11 +116,11 @@ export function InquiryForm() {
           <CheckCircle2 className="h-7 w-7" />
         </span>
         <h3 className="mt-5 font-display text-2xl font-bold tracking-tight text-foreground">
-          Inquiry received
+          Thank you!
         </h3>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-          Thank you for contacting Carwash Cafe Koronadal. We've received your inquiry and sent a
-          confirmation to your email address.
+          Your inquiry has been received successfully. We've sent a confirmation to your email and
+          our team will review your message as soon as possible.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <button
