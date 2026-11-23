@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Phone, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Facebook, Phone, MapPin, Clock, MessageCircle, Code2 } from "lucide-react";
 import { Logo } from "./logo";
 import { NAV, SITE } from "@/lib/site";
 
@@ -97,13 +97,32 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 text-xs text-surface-foreground/55 sm:flex-row sm:items-center">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 text-xs text-surface-foreground/55 lg:flex-row lg:items-center">
           <p>
             © {new Date().getFullYear()} {SITE.nameFull}. All rights reserved.
           </p>
-          <p className="text-surface-foreground/45">
-            Koronadal City · South Cotabato · Philippines
-          </p>
+          <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3 lg:justify-end">
+            <p className="text-surface-foreground/45">
+              Koronadal City · South Cotabato · Philippines
+            </p>
+            <span aria-hidden="true" className="hidden h-4 w-px bg-white/15 sm:block" />
+            <a
+              href="https://www.emmandev.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit emmandev, designer and developer of this website"
+              className="group inline-flex cursor-pointer items-center gap-1.5 rounded-sm text-surface-foreground/45 transition-all duration-200 hover:text-surface-foreground/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+            >
+              <Code2
+                aria-hidden="true"
+                className="h-3.5 w-3.5 shrink-0 text-primary transition-colors group-hover:text-primary-glow"
+              />
+              <span>Designed &amp; Developed by</span>
+              <span className="font-bold text-white transition-colors group-hover:text-primary">
+                emmandev
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
