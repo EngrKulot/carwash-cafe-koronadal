@@ -5,11 +5,7 @@ import { cn } from "@/lib/utils";
 import { Logo } from "./logo";
 import { NAV, SITE } from "@/lib/site";
 
-/**
- * Premium dark navigation header.
- * Solid charcoal surface, enlarged bare logo (no backing card), white text
- * with red active + hover accents. Same dark branding on desktop and mobile.
- */
+/** Premium floating glass navigation shared by every route. */
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -36,33 +32,41 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "border-b border-white/10 shadow-[0_18px_40px_-28px_rgba(0,0,0,0.9)]"
-          : "border-b border-white/5",
-        "bg-surface/95 backdrop-blur-md",
+        "pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 transition-[padding] duration-300 sm:px-5 lg:px-8",
+        scrolled && "pt-2",
       )}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-24 lg:px-8">
+      <div
+        className={cn(
+          "elevate-nav-glass pointer-events-auto mx-auto flex h-[4.5rem] max-w-7xl items-center px-3 transition-[background,border-color,box-shadow] duration-300 sm:px-5 lg:h-20 lg:px-6",
+          scrolled && "elevate-nav-glass--scrolled",
+        )}
+      >
         <Logo variant="bare" size="lg" to="/" />
 
+        <div aria-hidden className="mx-6 hidden h-9 w-px bg-white/20 lg:block" />
+
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav
+          aria-label="Primary navigation"
+          className="hidden flex-1 items-center justify-center gap-2 lg:flex"
+        >
           {NAV.map((item) => {
             const active = item.to === "/" ? pathname === "/" : pathname.startsWith(item.to);
             return (
               <Link
                 key={item.to}
                 to={item.to}
+                aria-current={active ? "page" : undefined}
                 className={cn(
-                  "group relative rounded-md px-3.5 py-2 text-sm font-medium transition-colors",
+                  "group relative rounded-md px-4 py-2.5 text-sm font-medium transition-colors duration-200",
                   active ? "text-primary" : "text-white/75 hover:text-white",
                 )}
               >
                 {item.label}
                 <span
                   className={cn(
-                    "absolute inset-x-3 -bottom-px h-px origin-left bg-primary transition-transform duration-300",
+                    "absolute inset-x-4 bottom-0 h-0.5 origin-left rounded-full bg-primary transition-transform duration-300",
                     active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
                   )}
                 />
@@ -71,10 +75,10 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="ml-auto flex items-center gap-2 lg:ml-5">
           <Link
             to="/contact"
-            className="hidden items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_8px_24px_-12px_oklch(0.552_0.214_25_/_0.85)] transition-all hover:bg-primary-glow hover:shadow-[0_12px_28px_-10px_oklch(0.552_0.214_25_/_0.9)] active:translate-y-px sm:inline-flex"
+            className="hidden items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_10px_28px_-10px_oklch(0.552_0.214_25_/_0.9)] transition-[transform,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-primary-glow hover:shadow-[0_14px_32px_-10px_oklch(0.552_0.214_25_/_0.95)] active:translate-y-0 sm:inline-flex"
           >
             <MessageCircle className="h-4 w-4" />
             Inquire Now
@@ -85,56 +89,61 @@ export function SiteHeader() {
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="mobile-navigation"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20 text-white transition-colors hover:bg-white/10 lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white transition-colors hover:border-white/30 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu overlay */}
-      <div
-        className={cn(
-          "overflow-hidden border-t border-white/10 bg-surface transition-[max-height,opacity] duration-300 lg:hidden",
-          open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0",
-        )}
-      >
-        <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
-          {NAV.map((item) => {
-            const active = item.to === "/" ? pathname === "/" : pathname.startsWith(item.to);
-            return (
-              <Link
-                key={item.to}
-                to={item.to}
-                className={cn(
-                  "flex items-center justify-between rounded-md px-4 py-3 text-base font-medium transition-colors",
-                  active
-                    ? "bg-white/10 text-primary"
-                    : "text-white/80 hover:bg-white/5 hover:text-white",
-                )}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-          <a
-            href={SITE.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary-glow"
+      {/* Mobile navigation keeps the desktop card's elevated glass treatment. */}
+      {open && (
+        <div
+          id="mobile-navigation"
+          className="elevate-nav-glass elevate-nav-glass--menu pointer-events-auto mx-auto mt-2 max-w-7xl overflow-y-auto p-2 animate-in fade-in slide-in-from-top-2 duration-200 lg:hidden"
+        >
+          <nav
+            aria-label="Mobile navigation"
+            className="flex max-h-[calc(100svh-6rem)] flex-col gap-1 overflow-y-auto p-1"
           >
-            <MessageCircle className="h-5 w-5" />
-            Message Us on Facebook
-          </a>
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/20 px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10"
-          >
-            Send an Inquiry
-          </Link>
-        </nav>
-      </div>
+            {NAV.map((item) => {
+              const active = item.to === "/" ? pathname === "/" : pathname.startsWith(item.to);
+              return (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "flex items-center justify-between rounded-lg border-l-2 px-4 py-3 text-base font-medium transition-colors",
+                    active
+                      ? "border-primary bg-white/10 text-primary"
+                      : "border-transparent text-white/80 hover:bg-white/5 hover:text-white",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <a
+              href={SITE.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-base font-semibold text-primary-foreground shadow-[0_10px_28px_-12px_oklch(0.552_0.214_25_/_0.9)] transition-colors hover:bg-primary-glow"
+            >
+              <MessageCircle className="h-5 w-5" />
+              Message Us on Facebook
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Send an Inquiry
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
