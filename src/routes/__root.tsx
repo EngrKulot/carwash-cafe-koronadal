@@ -14,6 +14,7 @@ import { reportVibeError } from "../lib/vibe-error-reporting";
 import { Loader } from "../components/loader";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
+import { MessengerLauncher } from "../components/messenger-launcher";
 import { SITE, LOGO } from "../lib/site";
 
 function NotFoundComponent() {
@@ -151,6 +152,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
       </div>
+      <MessengerLauncher />
     </QueryClientProvider>
   );
 }
