@@ -128,7 +128,6 @@ function GalleryPage() {
           </>
         }
         subtitle="A look at our actual detailing facility, active wash bays, elevated underwash ramp, and café. Clean rides and good vibes in Koronadal City."
-        align="center"
         primary={{ label: "Explore Services", to: "/services" }}
         secondary={{ label: "Visit Us", to: "/contact" }}
         badges={[
