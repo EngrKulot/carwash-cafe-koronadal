@@ -92,9 +92,9 @@ const VALUES = [
 
 const STATS = [
   { value: "2", label: "Offerings in one stop" },
-  { value: "4", label: "Detailing service lines" },
+  { value: "6", label: "Carwash bays" },
   { value: "100%", label: "Comfort-first waiting" },
-  { value: "1", label: "Easy Koronadal location" },
+  { value: "1", label: "Underwash ramp" },
 ];
 
 function AboutPage() {
