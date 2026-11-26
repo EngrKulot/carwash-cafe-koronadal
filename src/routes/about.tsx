@@ -249,13 +249,27 @@ function AboutPage() {
       <section className="px-4 py-20 sm:px-6 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <Reveal className="text-center">
-            <span className="hero-eyebrow text-primary">What Makes Us Different</span>
-            <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Care for your car. Comfort for you.
+            <span className="hero-eyebrow text-primary">Our Washing Process</span>
+            <h2 className="mx-auto mt-4 max-w-3xl font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Why Choose Our Carwash Process?
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Two offerings, one destination. Every visit is built around the same idea: your
-              vehicle deserves proper care, and you deserve a good place to wait.
+            <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p>
+                At Carwash Cafe, we believe a premium car wash starts with the right process. Unlike
+                an ordinary car wash, we follow a careful{" "}
+                <span className="font-semibold text-primary">bucket washing system</span> and use{" "}
+                <span className="font-semibold text-primary">quality car care chemicals</span> to
+                help deliver a more thorough and consistent clean.
+              </p>
+              <p>
+                Every vehicle deserves proper care, which is why we focus on the details, use the
+                right products, and take a more mindful approach to every wash. Our goal is not
+                simply to make your car look clean, but to give it the{" "}
+                <span className="font-semibold text-primary">premium care</span> it deserves.
+              </p>
+            </div>
+            <p className="mx-auto mt-7 max-w-2xl border-l-2 border-primary pl-4 text-left font-display text-lg font-semibold leading-relaxed text-foreground sm:text-center sm:text-xl">
+              It&apos;s not just a car wash. It&apos;s a better way to care for your vehicle.
             </p>
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
