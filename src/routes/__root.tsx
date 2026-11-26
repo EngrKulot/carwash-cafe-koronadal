@@ -15,7 +15,7 @@ import { Loader } from "../components/loader";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
 import { MessengerLauncher } from "../components/messenger-launcher";
-import { SITE, LOGO } from "../lib/site";
+import { SITE } from "../lib/site";
 
 function NotFoundComponent() {
   return (
@@ -112,10 +112,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "icon",
-        type: "image/png",
-        href: LOGO.src,
+        href: "/favicon.ico",
       },
-      { rel: "apple-touch-icon", href: LOGO.src },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
+      { rel: "manifest", href: "/site.webmanifest" },
     ],
   }),
   shellComponent: RootShell,
