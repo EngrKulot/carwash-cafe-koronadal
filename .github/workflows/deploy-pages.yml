@@ -33,7 +33,7 @@ jobs:
       - name: Build static site
         run: npm run build
         env:
-          VITE_BASE_PATH: /carwash-cafe-koronadal/
+          VITE_BASE_PATH: /
           VITE_MAKE_WEBHOOK_URL: ${{ secrets.VITE_MAKE_WEBHOOK_URL }}
 
       - name: Configure GitHub Pages
